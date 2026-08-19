@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Research, engineering, software, and selected publications by João Paulo Zomer Machado."
+    />
+    <title>João Paulo Zomer Machado — Researcher, engineer & builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header shell">
+      <a class="wordmark" href="#top" aria-label="Home"><span id="initials">RP</span>.</a>
+      <nav aria-label="Primary navigation">
+        <a href="#selected-work">Selected work</a>
+        <a href="#publications">Publications</a>
+        <a href="#about">About</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero shell" id="top" aria-labelledby="hero-title">
+        <p class="eyebrow">Researcher, engineer & builder <span aria-hidden="true">/</span> <span id="location"></span></p>
+        <div class="hero-grid">
+          <div>
+            <h1 id="hero-title"><span id="name">João Paulo Zomer Machado</span><br /><em id="role">Researcher, engineer & builder.</em></h1>
+            <p class="lede" id="bio"></p>
+          </div>
+          <aside class="hero-rail" aria-label="Portrait and profiles">
+            <figure class="portrait">
+              <img src="assets/portrait.png" width="1023" height="1537" alt="João Paulo Zomer Machado" />
+            </figure>
+            <div class="contact-card">
+              <p class="contact-label">Elsewhere</p>
+              <div class="profile-links" id="profile-links"></div>
+            </div>
+          </aside>
+        </div>
+        <a class="scroll-cue" href="#selected-work">Explore selected work <span aria-hidden="true">↓</span></a>
+      </section>
+
+      <section class="feature-section" id="selected-work" aria-labelledby="selected-title">
+        <div class="shell section-heading">
+          <p class="eyebrow">01 / Selected work</p>
+          <h2 id="selected-title">Research worth<br /><em>spending time with.</em></h2>
+          <p>Selected work with context beyond a citation.</p>
+        </div>
+        <div class="shell selected-grid" id="selected-publications"></div>
+      </section>
+
+
+      <section class="publications-section shell" id="publications" aria-labelledby="publications-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">02 / Full record</p>
+          <h2 id="publications-title">All publications.</h2>
+          <p>Filter by theme, then follow the links to the original work.</p>
+        </div>
+        <div class="publication-controls">
+          <div class="filter-list" id="filters" aria-label="Filter publications"></div>
+          <a class="scholar-link" id="scholar-link" href="https://scholar.google.com/citations?user=iRRAzJ8AAAAJ&hl=pt-PT&oi=ao" target="_blank" rel="noreferrer">Full Google Scholar record <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="publication-list" id="publication-list" aria-live="polite"></div>
+        <button class="publication-disclosure" id="publication-disclosure" type="button" aria-controls="publication-list" hidden></button>
+      </section>
+
+      <section class="about-section" id="about" aria-labelledby="about-title">
+        <div class="shell about-grid">
+          <p class="eyebrow">03 / How I work</p>
+          <div>
+            <h2 id="about-title">Understand the thing.<br /><em>Then make it work.</em></h2>
+            <p class="about-copy" id="research-statement"></p>
+            <a class="text-link" id="cv-link" href="#">Download CV <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer shell">
+      <p>© <span id="year"></span> <span id="footer-name">Researcher</span></p>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+  </body>
+</html>
