@@ -1,4 +1,4 @@
-import { publications, site } from "./site-data.js";
+import { publications, site } from "./site-data.js?v=20260824-02";
 
 const byId = (id) => document.getElementById(id);
 const externalAttributes = { target: "_blank", rel: "noreferrer" };
@@ -7,7 +7,8 @@ let activeTag = "All";
 let showAllPublications = false;
 
 function setText(id, value) {
-  byId(id).textContent = value;
+  const el = byId(id);
+  if (el) el.textContent = value;
 }
 
 function link(label, href, className = "") {
@@ -28,12 +29,12 @@ function renderProfile() {
     .join("")
     .toUpperCase();
 
-  document.title = `${site.name} — Research portfolio`;
+  document.title = `${site.name} — ${site.role}`;
   setText("name", site.name);
   setText("role", site.role);
   setText("location", site.location);
   setText("bio", site.bio);
-  setText("initials", initials || "RP");
+  setText("initials", initials || "JP");
   setText("footer-name", site.name);
   setText("research-statement", site.researchStatement);
   setText("year", new Date().getFullYear());

@@ -28,8 +28,7 @@ button { font: inherit; }
 .site-header nav a:hover, .site-header nav a:focus-visible { color: var(--spruce); text-decoration: underline; }
 
 .hero { padding: clamp(64px, 8vw, 108px) 0 66px; }
-.eyebrow { margin: 0 0 22px; color: var(--spruce); font: 500 0.7rem/1.4 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; }
-.eyebrow span { color: var(--coral); }
+.eyebrow { margin: 0 0 16px; color: var(--spruce); font: 500 0.78rem/1.4 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 188px; gap: 48px; align-items: end; }
 h1, h2 { margin: 0; letter-spacing: -0.055em; }
 h1 { max-width: 760px; font: 600 clamp(3.2rem, 6vw, 5.8rem)/0.96 var(--serif); }

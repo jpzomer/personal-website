@@ -4,9 +4,9 @@
 export const site = {
   name: "João Paulo Zomer Machado",
   role: "Researcher, engineer & builder",
-  location: "Research, engineering & software",
-  bio: "I work across research, engineering, and software where difficult real-world problems need to be measured, understood, automated, or turned into working systems.",
-  researchStatement: "My work moves between scientific research, instrumentation, and software: understanding how a system behaves, making uncertainty visible, and building tools that are useful beyond the experiment. I am drawn to problems that become clearer only after you try to make something work.",
+  location: "Florianópolis, Brazil",
+  bio: "Working on instrumentation, measurement uncertainty, and software systems—turning complex real-world physical problems into reliable, working solutions.",
+  researchStatement: "My work connects physical experiments with computation: understanding how complex systems behave, making measurement uncertainty visible, and building tools that outlast the laboratory. I am drawn to problems that only become clear when you try to make something work in practice.",
   cvUrl: "",
   profiles: [
     {
@@ -14,8 +14,16 @@ export const site = {
       url: "https://scholar.google.com/citations?user=iRRAzJ8AAAAJ&hl=pt-PT&oi=ao",
     },
     {
+      label: "Lattes",
+      url: "http://lattes.cnpq.br/8716914446280554",
+    },
+    {
       label: "ORCID",
       url: "https://orcid.org/0000-0002-9053-7463",
+    },
+    {
+      label: "LinkedIn",
+      url: "https://www.linkedin.com/in/jo%C3%A3o-paulo-zomer-machado-373903173/",
     },
     {
       label: "GitHub",
