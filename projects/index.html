@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../styles.css?v=20260825-03" />
-    <script type="module" src="../app.js?v=20260825-03"></script>
+    <link rel="stylesheet" href="../styles.css?v=20260825-04" />
+    <script type="module" src="../app.js?v=20260825-04"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -17,21 +17,47 @@
       <a class="wordmark" href="../" aria-label="Home"><span id="initials">JP</span>.</a>
       <nav aria-label="Primary navigation">
         <a href="./" aria-current="page">Projects</a>
-        <a href="../#selected-work">Research highlights</a>
         <a href="../publications/">Publications</a>
-        <a href="../about/">About me</a>
+        <a href="../about/">About</a>
       </nav>
     </header>
 
     <main id="main">
-      <section class="publications-page-intro shell" aria-labelledby="projects-page-title">
+      <section class="projects-page-intro shell" aria-labelledby="projects-page-title">
         <p class="eyebrow">01 / Systems &amp; Tools</p>
         <h1 id="projects-page-title">Selected<br /><em>projects.</em></h1>
-        <p class="lede">Software, developer tools, and web applications built to address specific problems and replace friction with tailored solutions.</p>
+        <p class="lede">Software and tools built around problems specific enough to deserve their own solution.</p>
       </section>
 
-      <section class="projects-section shell" aria-label="Projects list">
-        <div class="projects-grid" id="projects-list"></div>
+      <section class="projects-listing-section shell" aria-label="Projects list">
+        <div class="projects-grid" id="projects-list">
+          <article class="project-card">
+            <div>
+              <p class="project-meta">Developer Tooling / 2026</p>
+              <h3 class="project-title"><a href="markdown-browser/">Markdown Browser</a></h3>
+              <p class="project-summary">A fast, zero-database local web viewer for Markdown workspaces on headless servers, built around a filesystem-first philosophy.</p>
+            </div>
+            <footer class="project-footer">
+              <div class="project-links">
+                <a href="markdown-browser/">Case study →</a>
+                <a href="https://github.com/jpzomer/markdown-browser" target="_blank" rel="noreferrer">GitHub ↗</a>
+              </div>
+            </footer>
+          </article>
+          <article class="project-card">
+            <div>
+              <p class="project-meta">Web Application / 2026</p>
+              <h3 class="project-title"><a href="odm-musical/">ODM Musical</a></h3>
+              <p class="project-summary">A weekly album recommendation and review platform built to replace a growing spreadsheet ritual with dedicated software.</p>
+            </div>
+            <footer class="project-footer">
+              <div class="project-links">
+                <a href="odm-musical/">Case study →</a>
+                <a href="https://github.com/jpzomer/odm-musical" target="_blank" rel="noreferrer">GitHub ↗</a>
+              </div>
+            </footer>
+          </article>
+        </div>
       </section>
     </main>
 

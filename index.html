@@ -7,35 +7,35 @@
       name="description"
       content="Research, engineering, software, and selected publications by João Paulo Zomer Machado."
     />
-    <title>João Paulo Zomer Machado — Researcher, engineer & builder</title>
+    <title>João Paulo Zomer Machado — Researcher, engineer &amp; builder</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260825-03" />
-    <script type="module" src="app.js?v=20260825-03"></script>
+    <link rel="stylesheet" href="styles.css?v=20260825-04" />
+    <script type="module" src="app.js?v=20260825-04"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header shell">
-      <a class="wordmark" href="#top" aria-label="Home"><span id="initials">JP</span>.</a>
+      <a class="wordmark" href="./" aria-label="Home"><span id="initials">JP</span>.</a>
       <nav aria-label="Primary navigation">
-        <a href="#selected-projects">Projects</a>
-        <a href="#selected-work">Research highlights</a>
+        <a href="projects/">Projects</a>
         <a href="publications/">Publications</a>
-        <a href="about/">About me</a>
+        <a href="about/">About</a>
       </nav>
     </header>
 
     <main id="main">
+      <!-- Hero -->
       <section class="hero shell" id="top" aria-labelledby="hero-title">
         <p class="eyebrow">Researcher, engineer &amp; builder.</p>
         <div class="hero-grid">
           <div>
             <h1 id="hero-title"><span>João Paulo</span><br /><span>Zomer Machado</span></h1>
-            <p class="lede" id="bio"></p>
+            <p class="lede" id="bio">Working on instrumentation, measurement uncertainty, and software systems—turning complex real-world physical problems into reliable, working solutions.</p>
           </div>
           <aside class="hero-aside" aria-label="Areas of work">
             <p class="hero-aside-label">Across the work</p>
@@ -44,22 +44,119 @@
         </div>
       </section>
 
+      <!-- Selected Projects -->
       <section class="projects-section shell" id="selected-projects" aria-labelledby="projects-title">
         <div class="section-heading compact">
-          <h2 id="projects-title">Selected projects.</h2>
-          <p class="section-desc">Tools and systems built to solve specific workflow problems and replace friction with focused software.</p>
+          <p class="section-number">01 / Selected projects</p>
+          <div>
+            <h2 id="projects-title">Projects.</h2>
+            <p class="section-desc">Software and tools built around problems specific enough to deserve their own solution.</p>
+          </div>
           <a class="section-view-all" href="projects/">All projects ↗</a>
         </div>
-        <div class="projects-grid" id="selected-projects-grid"></div>
+        <div class="projects-grid" id="selected-projects-grid">
+          <article class="project-card">
+            <div>
+              <p class="project-meta">Developer Tooling / 2026</p>
+              <h3 class="project-title"><a href="projects/markdown-browser/">Markdown Browser</a></h3>
+              <p class="project-summary">A fast, zero-database local web viewer for Markdown workspaces on headless servers, built around a filesystem-first philosophy.</p>
+            </div>
+            <footer class="project-footer">
+              <div class="project-links">
+                <a href="projects/markdown-browser/">Case study →</a>
+                <a href="https://github.com/jpzomer/markdown-browser" target="_blank" rel="noreferrer">GitHub ↗</a>
+              </div>
+            </footer>
+          </article>
+          <article class="project-card">
+            <div>
+              <p class="project-meta">Web Application / 2026</p>
+              <h3 class="project-title"><a href="projects/odm-musical/">ODM Musical</a></h3>
+              <p class="project-summary">A weekly album recommendation and review platform built to replace a growing spreadsheet ritual with dedicated software.</p>
+            </div>
+            <footer class="project-footer">
+              <div class="project-links">
+                <a href="projects/odm-musical/">Case study →</a>
+                <a href="https://github.com/jpzomer/odm-musical" target="_blank" rel="noreferrer">GitHub ↗</a>
+              </div>
+            </footer>
+          </article>
+        </div>
       </section>
 
+      <!-- Research highlights -->
       <section class="feature-section" id="selected-work" aria-labelledby="selected-title">
         <div class="shell section-heading">
-          <h2 id="selected-title">Research highlights.</h2>
+          <p class="section-number">02 / Research highlights</p>
+          <div>
+            <h2 id="selected-title">Research<br /><em>highlights.</em></h2>
+          </div>
+          <a class="section-view-all" href="publications/">All publications ↗</a>
         </div>
-        <div class="shell selected-grid" id="selected-publications"></div>
+        <div class="shell selected-grid" id="selected-publications">
+          <article class="paper-card">
+            <div>
+              <p class="paper-meta">Metrology 4 (2), 164–180 / 2024</p>
+              <h3>Impact of angular speed calculation methods from encoder measurements on the test uncertainty of electric motor efficiency</h3>
+              <p class="paper-summary">Compares encoder-based angular-speed calculation methods and their effect on electric-motor efficiency-test uncertainty.</p>
+            </div>
+            <footer class="paper-footer">
+              <span class="tag">Measurement uncertainty</span>
+              <span class="tag">Electric machines</span>
+              <div class="paper-links">
+                <a href="https://www.mdpi.com/2673-8244/4/2/11" target="_blank" rel="noreferrer">Paper ↗</a>
+                <a href="https://doi.org/10.3390/metrology4020011" target="_blank" rel="noreferrer">DOI ↗</a>
+              </div>
+            </footer>
+          </article>
+          <article class="paper-card">
+            <div>
+              <p class="paper-meta">International Journal of Refrigeration 168, 288–296 / 2024</p>
+              <h3>Evaporating temperature estimation of refrigeration systems based on vibration data-driven soft sensors</h3>
+              <p class="paper-summary">Uses compressor-shell vibration and data-driven soft sensors to estimate evaporating temperature without a pressure transducer.</p>
+            </div>
+            <footer class="paper-footer">
+              <span class="tag">Soft sensing</span>
+              <span class="tag">Refrigeration</span>
+              <div class="paper-links">
+                <a href="https://www.sciencedirect.com/science/article/pii/S0140700724002950" target="_blank" rel="noreferrer">Paper ↗</a>
+                <a href="https://doi.org/10.1016/j.ijrefrig.2024.08.020" target="_blank" rel="noreferrer">DOI ↗</a>
+              </div>
+            </footer>
+          </article>
+          <article class="paper-card">
+            <div>
+              <p class="paper-meta">IEEE Latin America Transactions 21 (1), 117–123 / 2023</p>
+              <h3>Automation of temperature measurement in induction motors of hermetic compressors based on the method of temperature rise by resistance</h3>
+              <p class="paper-summary">Automates resistance-rise winding-temperature estimation for single-phase hermetic-compressor motors.</p>
+            </div>
+            <footer class="paper-footer">
+              <span class="tag">Automation</span>
+              <span class="tag">Electric machines</span>
+              <span class="tag">Refrigeration</span>
+              <div class="paper-links">
+                <a href="https://latamt.ieeer9.org/index.php/transactions/article/view/6949" target="_blank" rel="noreferrer">Paper ↗</a>
+                <a href="https://doi.org/10.1109/TLA.2023.10015133" target="_blank" rel="noreferrer">DOI ↗</a>
+                <a href="https://github.com/jpzomer/automation-TRR" target="_blank" rel="noreferrer">Code ↗</a>
+              </div>
+            </footer>
+          </article>
+          <article class="paper-card">
+            <div>
+              <p class="paper-meta">IEEE Transactions on Instrumentation and Measurement 74, article 1015609, 1–9 / 2025</p>
+              <h3>Differential efficiency testing method for power drive systems with measurement uncertainty analysis</h3>
+              <p class="paper-summary">Introduces differential efficiency measurements for power-drive systems with an uncertainty analysis focused on operating-point changes.</p>
+            </div>
+            <footer class="paper-footer">
+              <span class="tag">Measurement uncertainty</span>
+              <span class="tag">Power drives</span>
+              <div class="paper-links">
+                <a href="https://doi.org/10.1109/TIM.2025.3606023" target="_blank" rel="noreferrer">DOI ↗</a>
+              </div>
+            </footer>
+          </article>
+        </div>
       </section>
-
     </main>
 
     <footer class="site-footer shell">

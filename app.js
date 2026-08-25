@@ -1,4 +1,4 @@
-import { projects, publications, site } from "./site-data.js?v=20260825-01";
+import { projects, publications, site } from "./site-data.js?v=20260825-04";
 
 const byId = (id) => document.getElementById(id);
 const externalAttributes = { target: "_blank", rel: "noreferrer" };
@@ -100,6 +100,7 @@ function renderProfile() {
 
   const profileLinks = byId("profile-links");
   if (profileLinks) {
+    profileLinks.replaceChildren();
     site.profiles.forEach((profile) => profileLinks.append(createProfileLink(profile)));
   }
 
@@ -140,6 +141,7 @@ function renderSelectedWork() {
   if (!container) return;
   const featured = publications.filter((publication) => publication.featured);
 
+  container.replaceChildren();
   if (!featured.length) {
     container.append(createEmptyState("Add verified featured papers in site-data.js to populate this editorial section."));
     return;
@@ -213,6 +215,7 @@ function renderSelectedProjects() {
   const container = byId("selected-projects-grid");
   if (!container) return;
   const featured = projects.filter((project) => project.featured);
+  container.replaceChildren();
   if (!featured.length) {
     container.append(createEmptyState("Selected projects will appear here."));
     return;
@@ -223,6 +226,7 @@ function renderSelectedProjects() {
 function renderProjectsList() {
   const container = byId("projects-list");
   if (!container) return;
+  container.replaceChildren();
   projects.forEach((project) => container.append(createProjectCard(project)));
 }
 
@@ -297,6 +301,7 @@ function renderFilters() {
   const container = byId("filters");
   if (!container) return;
 
+  container.replaceChildren();
   tags.forEach((tag) => {
     const button = document.createElement("button");
     button.className = "filter-button";
