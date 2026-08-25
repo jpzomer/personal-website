@@ -259,7 +259,7 @@ export const projects = [
     ],
     links: {
       github: "https://github.com/jpzomer/markdown-browser",
-      page: "projects/markdown-browser/",
+      page: "/projects/markdown-browser/",
     },
     featured: true,
   },
@@ -290,7 +290,7 @@ export const projects = [
     ],
     links: {
       github: "https://github.com/jpzomer/odm-musical",
-      page: "projects/odm-musical/",
+      page: "/projects/odm-musical/",
     },
     featured: true,
   },
