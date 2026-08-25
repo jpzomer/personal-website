@@ -29,10 +29,13 @@ button { font: inherit; }
 
 .hero { padding: clamp(64px, 8vw, 108px) 0 66px; }
 .eyebrow { margin: 0 0 16px; color: var(--spruce); font: 500 0.78rem/1.4 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; }
-.hero-grid { display: block; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(180px, 240px); gap: clamp(42px, 7vw, 96px); align-items: end; }
 h1, h2 { margin: 0; letter-spacing: -0.055em; }
 h1 { max-width: 760px; font: 600 clamp(3.2rem, 6vw, 5.8rem)/0.96 var(--serif); }
 .name-line { display: block; }
+.hero-aside { align-self: end; padding-top: 22px; border-top: 2px solid var(--ink); color: var(--spruce); }
+.hero-aside-label { margin: 0 0 13px; color: var(--muted); font: 500 0.7rem var(--mono); letter-spacing: 0.08em; text-transform: uppercase; }
+.hero-aside p:last-child { margin: 0; font: 600 clamp(1.2rem, 2vw, 1.65rem)/1.12 var(--serif); }
 h1 em, h2 em { color: var(--spruce); font-weight: 600; }
 .lede { max-width: 620px; margin: 30px 0 0; color: var(--muted); font-size: clamp(1.1rem, 2vw, 1.25rem); line-height: 1.55; }
 .hero-rail { display: grid; gap: 18px; align-self: end; }
@@ -42,8 +45,9 @@ h1 em, h2 em { color: var(--spruce); font-weight: 600; }
 .contact-label { margin: 0 0 11px; color: var(--muted); font: 500 0.7rem var(--mono); letter-spacing: 0.08em; text-transform: uppercase; }
 .profile-links { display: grid; gap: 7px; }
 .profile-links a { width: fit-content; font-size: 0.95rem; font-weight: 600; }
-.scroll-cue { display: inline-flex; gap: 20px; margin-top: 54px; color: var(--spruce); font-size: 0.86rem; font-weight: 700; text-decoration: none; }
-.scroll-cue span { color: var(--coral); }
+.profile-link { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+.profile-link svg { width: 18px; height: 18px; flex: 0 0 18px; }
+.profile-arrow { color: var(--coral); font-size: 0.82rem; }
 
 .feature-section { padding: 82px 0 88px; background: var(--spruce); color: #f4f8e9; }
 .feature-section .eyebrow { color: var(--lime); }
@@ -67,6 +71,11 @@ h1 em, h2 em { color: var(--spruce); font-weight: 600; }
 .paper-links a:hover { text-decoration: underline; }
 .empty-state { grid-column: 1 / -1; padding: 33px; border: 1px dashed #aabbd1; color: #cfddf0; }
 
+.about-page-intro { padding: clamp(64px, 8vw, 108px) 0 28px; }
+.about-page-intro h1 { max-width: 800px; font: 600 clamp(3.2rem, 6vw, 5.8rem)/0.96 var(--serif); }
+.about-page-intro h1 em { color: var(--spruce); font-style: normal; }
+.about-page-section { margin-top: 24px; }
+.about-page-grid { display: grid; grid-template-columns: minmax(230px, 0.45fr) minmax(0, 1fr); gap: clamp(42px, 8vw, 112px); align-items: start; }
 .record-link-section { display: grid; grid-template-columns: minmax(190px, 0.35fr) minmax(0, 1fr); gap: 28px; padding-top: 72px; padding-bottom: 80px; }
 .record-link-section h2 { margin-bottom: 25px; color: var(--ink); font: 600 clamp(2.5rem, 4.8vw, 4.25rem)/0.98 var(--serif); }
 .record-link-section h2 em { color: var(--spruce); }
@@ -107,13 +116,12 @@ h1 em, h2 em { color: var(--spruce); font-weight: 600; }
 .site-footer { display: flex; min-height: 76px; align-items: center; justify-content: space-between; color: var(--muted); font-size: 0.8rem; }
 .site-footer p { margin: 0; }
 .site-footer a { color: var(--spruce); font-weight: 700; }
-
 @media (max-width: 760px) {
   .shell { width: min(100% - 32px, 1160px); }
   .site-header { min-height: 70px; }
   .site-header nav { gap: 13px; font-size: 0.76rem; }
   .hero { padding-top: 76px; }
-  .hero-grid, .section-heading, .section-heading.compact, .about-grid, .record-link-section { grid-template-columns: 1fr; gap: 18px; }
+  .hero-grid, .section-heading, .section-heading.compact, .about-grid, .record-link-section, .about-page-grid { grid-template-columns: 1fr; gap: 18px; }
   .selected-grid { grid-template-columns: 1fr; margin-top: 43px; }
   .paper-card, .paper-card:first-child, .paper-card:nth-child(2), .paper-card:nth-child(3n), .paper-card:nth-child(3n + 1):not(:first-child) { grid-column: 1; min-height: 290px; }
   .publication-controls, .site-footer { align-items: flex-start; flex-direction: column; }
