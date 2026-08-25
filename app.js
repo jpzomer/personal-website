@@ -40,16 +40,21 @@ function renderProfile() {
   setText("year", new Date().getFullYear());
 
   const profileLinks = byId("profile-links");
-  site.profiles.forEach((profile) => profileLinks.append(link(`${profile.label} ↗`, profile.url)));
+  if (profileLinks) {
+    site.profiles.forEach((profile) => profileLinks.append(link(`${profile.label} ↗`, profile.url)));
+  }
 
   const scholar = site.profiles.find((profile) => profile.label === "Google Scholar");
-  if (scholar) byId("scholar-link").href = scholar.url;
+  const scholarLink = byId("scholar-link");
+  if (scholar && scholarLink) scholarLink.href = scholar.url;
 
   const cvLink = byId("cv-link");
-  if (site.cvUrl) {
-    cvLink.href = site.cvUrl;
-  } else {
-    cvLink.hidden = true;
+  if (cvLink) {
+    if (site.cvUrl) {
+      cvLink.href = site.cvUrl;
+    } else {
+      cvLink.hidden = true;
+    }
   }
 }
 
@@ -73,6 +78,7 @@ function createPaperLinks(links) {
 
 function renderSelectedWork() {
   const container = byId("selected-publications");
+  if (!container) return;
   const featured = publications.filter((publication) => publication.featured);
 
   if (!featured.length) {
@@ -137,6 +143,7 @@ function createPublicationRow(publication) {
 
 function renderPublicationDisclosure(total, rendered) {
   const button = byId("publication-disclosure");
+  if (!button) return;
   if (total <= PUBLICATION_PAGE_SIZE) {
     button.hidden = true;
     return;
@@ -154,6 +161,7 @@ function renderPublicationDisclosure(total, rendered) {
 
 function renderPublicationList() {
   const container = byId("publication-list");
+  if (!container) return;
   container.replaceChildren();
   const matching = publications
     .filter((publication) => activeTag === "All" || publication.tags.includes(activeTag))
@@ -176,6 +184,7 @@ function renderPublicationList() {
 function renderFilters() {
   const tags = ["All", ...new Set(publications.flatMap((publication) => publication.tags))];
   const container = byId("filters");
+  if (!container) return;
 
   tags.forEach((tag) => {
     const button = document.createElement("button");
@@ -195,10 +204,13 @@ function renderFilters() {
   });
 }
 
-byId("publication-disclosure").addEventListener("click", () => {
-  showAllPublications = !showAllPublications;
-  renderPublicationList();
-});
+const disclosure = byId("publication-disclosure");
+if (disclosure) {
+  disclosure.addEventListener("click", () => {
+    showAllPublications = !showAllPublications;
+    renderPublicationList();
+  });
+}
 
 renderProfile();
 renderSelectedWork();

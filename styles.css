@@ -29,9 +29,10 @@ button { font: inherit; }
 
 .hero { padding: clamp(64px, 8vw, 108px) 0 66px; }
 .eyebrow { margin: 0 0 16px; color: var(--spruce); font: 500 0.78rem/1.4 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; }
-.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 188px; gap: 48px; align-items: end; }
+.hero-grid { display: block; }
 h1, h2 { margin: 0; letter-spacing: -0.055em; }
 h1 { max-width: 760px; font: 600 clamp(3.2rem, 6vw, 5.8rem)/0.96 var(--serif); }
+.name-line { display: block; }
 h1 em, h2 em { color: var(--spruce); font-weight: 600; }
 .lede { max-width: 620px; margin: 30px 0 0; color: var(--muted); font-size: clamp(1.1rem, 2vw, 1.25rem); line-height: 1.55; }
 .hero-rail { display: grid; gap: 18px; align-self: end; }
@@ -65,6 +66,16 @@ h1 em, h2 em { color: var(--spruce); font-weight: 600; }
 .paper-links a { text-decoration: none; }
 .paper-links a:hover { text-decoration: underline; }
 .empty-state { grid-column: 1 / -1; padding: 33px; border: 1px dashed #aabbd1; color: #cfddf0; }
+
+.record-link-section { display: grid; grid-template-columns: minmax(190px, 0.35fr) minmax(0, 1fr); gap: 28px; padding-top: 72px; padding-bottom: 80px; }
+.record-link-section h2 { margin-bottom: 25px; color: var(--ink); font: 600 clamp(2.5rem, 4.8vw, 4.25rem)/0.98 var(--serif); }
+.record-link-section h2 em { color: var(--spruce); }
+.about-rail { width: min(100%, 230px); }
+
+.publications-page-intro { padding: clamp(64px, 8vw, 108px) 0 28px; }
+.publications-page-intro h1 { max-width: 760px; font: 600 clamp(3.2rem, 6vw, 5.8rem)/0.96 var(--serif); }
+.publications-page-intro h1 em { color: var(--spruce); font-style: normal; }
+.publications-page-intro .lede { max-width: 590px; }
 
 
 .publications-section { padding: 88px 0; }
@@ -102,8 +113,7 @@ h1 em, h2 em { color: var(--spruce); font-weight: 600; }
   .site-header { min-height: 70px; }
   .site-header nav { gap: 13px; font-size: 0.76rem; }
   .hero { padding-top: 76px; }
-  .hero-grid, .section-heading, .section-heading.compact, .about-grid { grid-template-columns: 1fr; gap: 18px; }
-  .hero-rail { width: min(100%, 260px); max-width: none; }
+  .hero-grid, .section-heading, .section-heading.compact, .about-grid, .record-link-section { grid-template-columns: 1fr; gap: 18px; }
   .selected-grid { grid-template-columns: 1fr; margin-top: 43px; }
   .paper-card, .paper-card:first-child, .paper-card:nth-child(2), .paper-card:nth-child(3n), .paper-card:nth-child(3n + 1):not(:first-child) { grid-column: 1; min-height: 290px; }
   .publication-controls, .site-footer { align-items: flex-start; flex-direction: column; }
