@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Case study: ODM Musical — A weekly album recommendation and review platform replacing spreadsheet workflows." />
+    <title>ODM Musical — João Paulo Zomer Machado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../styles.css?v=20260825-03" />
+    <script type="module" src="../../app.js?v=20260825-03"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header shell">
+      <a class="wordmark" href="../../" aria-label="Home"><span id="initials">JP</span>.</a>
+      <nav aria-label="Primary navigation">
+        <a href="../" aria-current="page">Projects</a>
+        <a href="../../#selected-work">Research highlights</a>
+        <a href="../../publications/">Publications</a>
+        <a href="../../about/">About me</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="project-page-intro shell" aria-labelledby="project-title">
+        <p class="eyebrow">Web Application / 2026</p>
+        <h1 id="project-title">ODM <em>Musical.</em></h1>
+        <p class="lede">A tailored weekly album recommendation and review platform built to replace a growing spreadsheet ritual with dedicated software.</p>
+      </section>
+
+      <section class="project-detail-section shell">
+        <div class="project-detail-grid">
+          <aside class="project-sidebar" aria-label="Project details">
+            <div class="project-sidebar-group">
+              <p class="project-sidebar-label">Category</p>
+              <p class="project-sidebar-value">Web Application</p>
+            </div>
+            <div class="project-sidebar-group">
+              <p class="project-sidebar-label">Stack</p>
+              <p class="project-sidebar-value">Python (FastAPI), SQLite, Jinja2, PWA, Docker</p>
+            </div>
+            <div class="project-sidebar-group">
+              <p class="project-sidebar-label">Source Code</p>
+              <p class="project-sidebar-value">
+                <a href="https://github.com/jpzomer/odm-musical" target="_blank" rel="noreferrer">github.com/jpzomer/odm-musical ↗</a>
+              </p>
+            </div>
+          </aside>
+
+          <article class="project-body">
+            <h2>The Origin: Beyond Spreadsheets</h2>
+            <p>For months, a weekly music listening club among friends operated entirely through a shared Google Spreadsheet. Every week, one participant recommended an album, everyone listened and submitted ratings (0–10) with written verdicts, and a historical leaderboard tracked rankings, averages, and group taste.</p>
+            <p>As the club grew past dozens of rounds, the manual workflow began showing friction:</p>
+            <ul>
+              <li>Tracking Spotify links, high-resolution artwork, and album release years required tedious manual copy-pasting.</li>
+              <li>Input validation and rating deadlines were difficult to enforce cleanly on shared cells.</li>
+              <li>Viewing album history and reading long-form reviews on mobile devices was cumbersome.</li>
+            </ul>
+            <p>Rather than adopting a generic social platform, the decision was to build a purpose-made application designed strictly around the group's established rituals.</p>
+
+            <h2>Product Architecture &amp; Workflow</h2>
+            <p>ODM Musical automates the administrative overhead while keeping the conversational spirit of the club intact:</p>
+            <ul>
+              <li><strong>Automated Spotify Enrichment:</strong> When a recommender pastes a Spotify album link, the backend fetches canonical metadata, artist details, release year, and high-resolution cover artwork automatically.</li>
+              <li><strong>Weekly Round Lifecycle:</strong> Automated state transitions from Open (accepting submissions and reviews) to Closed (revealing final averages, distribution charts, and archive statistics).</li>
+              <li><strong>Mobile-First PWA:</strong> Built with web app manifest and service workers, allowing members to install the platform directly to their mobile home screens with near-instant load times.</li>
+            </ul>
+
+            <h2>Engineering &amp; Design Decisions</h2>
+
+            <div class="project-decision-block">
+              <h3>1. Server-Rendered Simplicity with FastAPI &amp; SQLite</h3>
+              <p>Opted for server-side HTML rendering with Jinja2 rather than a decoupled SPA framework. This eliminated complex client state synchronization, ensured rapid first-contentful paint on mobile networks, and kept SQLite operations completely transactional and predictable.</p>
+            </div>
+
+            <div class="project-decision-block">
+              <h3>2. Frictionless Onboarding &amp; Unified Identity</h3>
+              <p>Participants can log in using a simple 6-digit passcode or via OpenID Connect (Authentik SSO). Existing passcode accounts can seamlessly link to OIDC identities via verified email matching, ensuring no friction for casual group members while supporting modern SSO security.</p>
+            </div>
+
+            <div class="project-decision-block">
+              <h3>3. Homelab Security &amp; Zero Public Ports</h3>
+              <p>Deployed inside a private Docker network behind a Cloudflare Tunnel ingress. No host ports are exposed to the public internet; traffic is routed through encrypted tunnels with automated HTTPS, HTTPOnly cookie protection, and HMAC-signed sessions.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer shell">
+      <p>© <span id="year">2026</span> <span id="footer-name">João Paulo Zomer Machado</span></p>
+      <a href="../">All projects ↑</a>
+    </footer>
+  </body>
+</html>

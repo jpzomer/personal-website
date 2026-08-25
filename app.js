@@ -1,4 +1,4 @@
-import { publications, site } from "./site-data.js?v=20260824-02";
+import { projects, publications, site } from "./site-data.js?v=20260825-01";
 
 const byId = (id) => document.getElementById(id);
 const externalAttributes = { target: "_blank", rel: "noreferrer" };
@@ -174,6 +174,58 @@ function renderSelectedWork() {
   });
 }
 
+function createProjectLinks(links) {
+  const container = document.createElement("div");
+  container.className = "project-links";
+  if (links.page) container.append(link("Case study →", links.page));
+  if (links.github) container.append(link("GitHub ↗", links.github));
+  return container;
+}
+
+function createProjectCard(project) {
+  const card = document.createElement("article");
+  card.className = "project-card";
+
+  const content = document.createElement("div");
+  const meta = document.createElement("p");
+  meta.className = "project-meta";
+  meta.textContent = `${project.category} / ${project.year}`;
+  const title = document.createElement("h3");
+  title.className = "project-title";
+  const titleLink = document.createElement("a");
+  titleLink.href = project.links.page || project.links.github;
+  titleLink.textContent = project.title;
+  title.append(titleLink);
+
+  const summary = document.createElement("p");
+  summary.className = "project-summary";
+  summary.textContent = project.summary;
+  content.append(meta, title, summary);
+
+  const footer = document.createElement("footer");
+  footer.className = "project-footer";
+  footer.append(createProjectLinks(project.links));
+  card.append(content, footer);
+  return card;
+}
+
+function renderSelectedProjects() {
+  const container = byId("selected-projects-grid");
+  if (!container) return;
+  const featured = projects.filter((project) => project.featured);
+  if (!featured.length) {
+    container.append(createEmptyState("Selected projects will appear here."));
+    return;
+  }
+  featured.forEach((project) => container.append(createProjectCard(project)));
+}
+
+function renderProjectsList() {
+  const container = byId("projects-list");
+  if (!container) return;
+  projects.forEach((project) => container.append(createProjectCard(project)));
+}
+
 function createPublicationRow(publication) {
   const row = document.createElement("article");
   row.className = "publication-row";
@@ -273,5 +325,7 @@ if (disclosure) {
 
 renderProfile();
 renderSelectedWork();
+renderSelectedProjects();
+renderProjectsList();
 renderFilters();
 renderPublicationList();

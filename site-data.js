@@ -225,12 +225,76 @@ export const publications = [
   {
     title: "Técnicas de sensoriamento virtual para estimação não invasiva de vazão de líquidos",
     authors: "RH de Santana, JL Machado, JPZ Machado, G Thaler, RCC Flesch",
-    venue: "",
-    year: null,
     tags: ["Soft sensing", "Measurement"],
   },
 ];
 
+// Selected software and engineering projects.
+// Explains why each tool exists and the design decisions that followed.
+export const projects = [
+  {
+    id: "markdown-browser",
+    title: "Markdown Browser",
+    category: "Developer Tooling",
+    year: 2026,
+    summary:
+      "A fast, zero-database local web viewer for Markdown workspaces on headless servers, built around a filesystem-first philosophy.",
+    problem:
+      "Technical notes, architecture records, and documentation already lived on headless servers and local directories. Browsing them comfortably usually required launching a full IDE, setting up syncing services, or adopting another centralized content database. The goal was to provide pleasant search, navigation, and reading ergonomics directly around the existing filesystem.",
+    solution:
+      "Built a self-hosted viewer in pure Python and modern vanilla web standards. The filesystem remains the uncompromised source of truth while the browser adds hierarchical tree navigation, full-text search, outline maps, tags, TODO indexing, and local image rendering on the fly.",
+    decisions: [
+      {
+        title: "Filesystem as the Single Source of Truth",
+        text: "Avoided introducing SQLite or document databases. Notes stay plain text files in their natural directory hierarchy, easily editable with any text editor or CLI tool.",
+      },
+      {
+        title: "Zero Heavy Dependencies",
+        text: "Implemented using Python's standard library HTTP server and Python-Markdown, packaged in a lightweight container with zero build-step front-end assets.",
+      },
+      {
+        title: "On-the-Fly Indexing & Exploration",
+        text: "Extracted structure, heading hierarchies, tags, TODOs, and relative backlinks dynamically, offering IDE-like insights without background syncing daemons.",
+      },
+    ],
+    links: {
+      github: "https://github.com/jpzomer/markdown-browser",
+      page: "projects/markdown-browser/",
+    },
+    featured: true,
+  },
+  {
+    id: "odm-musical",
+    title: "ODM Musical",
+    category: "Web Application",
+    year: 2026,
+    summary:
+      "A weekly album recommendation and review platform built to replace a growing spreadsheet ritual with dedicated software.",
+    problem:
+      "A weekly music club among friends had been operating through a shared spreadsheet. Over months of consistent participation, the process accumulated complex scoring rules, historical archives, tie-breaker rituals, and artwork tracking that outgrew spreadsheet ergonomics.",
+    solution:
+      "Designed a tailored server-rendered web application with FastAPI and SQLite. It automates Spotify metadata retrieval, manages weekly round lifecycles, collects ratings and commentary, and runs behind a zero-open-ports Cloudflare Tunnel with central OpenID Connect identity.",
+    decisions: [
+      {
+        title: "Server-Rendered Simplicity",
+        text: "Used FastAPI and Jinja2 for fast, robust HTML delivery with Progressive Web App (PWA) capabilities, keeping client-side state minimal and mobile access instant.",
+      },
+      {
+        title: "Frictionless Onboarding & Central Identity",
+        text: "Supported both lightweight local passcode access and OpenID Connect (Authentik SSO) with verified email linking, allowing friends to participate without cumbersome registration barriers.",
+      },
+      {
+        title: "Isolated Homelab Deployment",
+        text: "Packaged with Docker and exposed securely via Cloudflare Tunnels without publishing public host ports, preserving server security and privacy.",
+      },
+    ],
+    links: {
+      github: "https://github.com/jpzomer/odm-musical",
+      page: "projects/odm-musical/",
+    },
+    featured: true,
+  },
+];
 
 // Reserved for occasional technical notes, research thoughts, and engineering
 // rabbit holes. Empty by design until there is real writing to publish.

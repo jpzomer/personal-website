@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Case study: Markdown Browser — A fast, zero-database local web viewer for Markdown workspaces." />
+    <title>Markdown Browser — João Paulo Zomer Machado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../styles.css?v=20260825-03" />
+    <script type="module" src="../../app.js?v=20260825-03"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header shell">
+      <a class="wordmark" href="../../" aria-label="Home"><span id="initials">JP</span>.</a>
+      <nav aria-label="Primary navigation">
+        <a href="../" aria-current="page">Projects</a>
+        <a href="../../#selected-work">Research highlights</a>
+        <a href="../../publications/">Publications</a>
+        <a href="../../about/">About me</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="project-page-intro shell" aria-labelledby="project-title">
+        <p class="eyebrow">Developer Tooling / 2026</p>
+        <h1 id="project-title">Markdown <em>Browser.</em></h1>
+        <p class="lede">A fast, zero-database web viewer built around a filesystem-first philosophy for browsing and reading Markdown workspaces on headless servers.</p>
+      </section>
+
+      <section class="project-detail-section shell">
+        <div class="project-detail-grid">
+          <aside class="project-sidebar" aria-label="Project details">
+            <div class="project-sidebar-group">
+              <p class="project-sidebar-label">Category</p>
+              <p class="project-sidebar-value">Developer Tooling</p>
+            </div>
+            <div class="project-sidebar-group">
+              <p class="project-sidebar-label">Stack</p>
+              <p class="project-sidebar-value">Python, Vanilla JS, HTML/CSS, Docker</p>
+            </div>
+            <div class="project-sidebar-group">
+              <p class="project-sidebar-label">Source Code</p>
+              <p class="project-sidebar-value">
+                <a href="https://github.com/jpzomer/markdown-browser" target="_blank" rel="noreferrer">github.com/jpzomer/markdown-browser ↗</a>
+              </p>
+            </div>
+          </aside>
+
+          <article class="project-body">
+            <h2>The Origin &amp; Problem</h2>
+            <p>Technical notes, architecture decisions, research ideas, and project documentation often live as collections of Markdown (<code>.md</code>, <code>.mdx</code>) files spread across local folders or headless servers. Over time, these files form rich repositories of knowledge.</p>
+            <p>However, reading and navigating through them comfortably usually meant one of two compromises:</p>
+            <ul>
+              <li>Launching a heavy IDE or code editor session just to read formatted text.</li>
+              <li>Importing the notes into a centralized note-taking app or database, requiring syncing agents and giving up the raw file hierarchy.</li>
+            </ul>
+            <p>The goal of Markdown Browser was to solve this friction: make browsing existing note directories as pleasant as reading a published book, without introducing intermediate databases or syncing workflows.</p>
+
+            <h2>The Filesystem-First Philosophy</h2>
+            <p>The core architectural principle is that <strong>the filesystem remains the single source of truth</strong>. Files stay where they are, in plain text, organized however the author prefers. Any text editor, CLI utility, or Git command can continue modifying them directly.</p>
+            <p>The web application acts as a non-invasive viewing and navigation lens on top of the filesystem. It scans configured root paths, resolves relative links and images dynamically, and builds rich navigation structures on the fly.</p>
+
+            <h2>Key Design Decisions</h2>
+
+            <div class="project-decision-block">
+              <h3>1. Zero-Database Architecture</h3>
+              <p>No SQLite, PostgreSQL, or document store is used. Bypassing a database prevents synchronization drift, eliminates migration overhead, and ensures the tool starts instantly anywhere a folder of Markdown files exists.</p>
+            </div>
+
+            <div class="project-decision-block">
+              <h3>2. On-the-Fly Metadata &amp; Structure Extraction</h3>
+              <p>Rather than relying on pre-indexing daemons, the scanner extracts headings, internal relative links, <code>#tags</code>, <code>- [ ] TODO</code> markers, and decisions dynamically. It automatically detects broken local links and builds document backlinks in real time.</p>
+            </div>
+
+            <div class="project-decision-block">
+              <h3>3. Minimalist Runtime &amp; Portability</h3>
+              <p>Implemented with Python's standard library HTTP server and Python-Markdown, with zero front-end build pipelines or framework dependencies. Packaged in a compact Docker container that can mount any host directory in read-only mode.</p>
+            </div>
+
+            <h2>Reading Ergonomics</h2>
+            <p>In addition to standard folder tree navigation, the interface provides multiple contextual viewing modes:</p>
+            <ul>
+              <li><strong>Folder Map:</strong> A high-level bird's-eye view outlining folders, documents, and their internal heading structures simultaneously.</li>
+              <li><strong>Metadata Filters:</strong> Instant filtering across recent modifications, actionable TODOs, tag clouds, and broken links.</li>
+              <li><strong>Refined Typography:</strong> Thoughtfully tuned reading typography with light/dark theme toggle and density switching for desktop and mobile screens.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer shell">
+      <p>© <span id="year">2026</span> <span id="footer-name">João Paulo Zomer Machado</span></p>
+      <a href="../">All projects ↑</a>
+    </footer>
+  </body>
+</html>
